@@ -1,0 +1,34 @@
+{
+  "name": "record-shortcuts",
+  "version": "0.1.0",
+  "description": "records shortcuts on browser",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "make transpile",
+    "test": "make all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tetsuo/record-shortcuts.git"
+  },
+  "keywords": [
+    "shortcuts"
+  ],
+  "author": "Onur Gunduz <ogunduz@gmail.com> (http://onurgunduz.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tetsuo/record-shortcuts/issues"
+  },
+  "homepage": "https://github.com/tetsuo/record-shortcuts",
+  "dependencies": {
+    "component-os": "0.0.1",
+    "keycode": "^2.0.0"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "mocha": "^2.2.4",
+    "mochify": "^2.7.1",
+    "should": "^5.2.0",
+    "yields-keycode": "^1.1.0"
+  }
+}
