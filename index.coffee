@@ -52,8 +52,6 @@ keydown = (e) ->
 
   key = keycode e.which or e.keyCode
 
-  if key is 'esc' then return cancel()
-
   if key of pfx
   then pfx[meta] = yes for meta of pfx when key is meta
   else
@@ -64,6 +62,8 @@ keydown = (e) ->
       result = (meta for meta, val of pfx when val).concat [key]
       emitter.emit 'end', result
       reset()
+    else
+      if key is 'esc' then return cancel()
 
   return
 

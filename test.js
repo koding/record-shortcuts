@@ -77,12 +77,21 @@ describe('recorder', function () {
     recorder.start();
   });
 
-  it('should cancel if esc is down', function (done) {
+  it('should cancel upon a single esc', function (done) {
     recorder.start()
-      .on('cancel', function () {
-        done();
+      .on('end', function (res) {
+        res.should.eql(['ctrl', 'esc']);
+
+        recorder.start()
+          .on('cancel', function () {
+            done();
+          });
+        dispatch('keydown', 'ctrl');
+        dispatch('keyup', 'ctrl');
+        dispatch('keydown', 'esc');
+
       });
-    dispatch('keydown', 'alt');
+    dispatch('keydown', 'ctrl');
     dispatch('keydown', 'esc');
   });
 
