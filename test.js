@@ -77,6 +77,15 @@ describe('recorder', function () {
     recorder.start();
   });
 
+  it('should cancel if esc is down', function (done) {
+    recorder.start()
+      .on('cancel', function () {
+        done();
+      });
+    dispatch('keydown', 'alt');
+    dispatch('keydown', 'esc');
+  });
+
 });
 
 

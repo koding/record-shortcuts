@@ -52,6 +52,8 @@ keydown = (e) ->
 
   key = keycode e.which or e.keyCode
 
+  if key is 'esc' then return cancel()
+
   if key of pfx
   then pfx[meta] = yes for meta of pfx when key is meta
   else
