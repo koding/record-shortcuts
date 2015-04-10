@@ -1,4 +1,4 @@
-# records-shortcuts
+# record-shortcuts
 
 records shortcuts on browser.
 
@@ -22,7 +22,11 @@ This returns an `EventEmitter` singleton that emits either an `end` or a `cancel
 
 Cancels current recording session and emits `cancel`.
 
-# valid combinations
+# validation
+
+Works pretty much like how osx does.
+
+### valid combinations
 
 * `command+s`
 * `command+alt+ctrl+s`
@@ -30,7 +34,7 @@ Cancels current recording session and emits `cancel`.
 * `alt+s`
 * `ctrl+s`
 
-# invalid combinations
+### invalid combinations
 
 * `s`
 * `shift+s`
