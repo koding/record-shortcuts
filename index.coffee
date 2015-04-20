@@ -2,6 +2,8 @@ events = require 'events'
 keycode = require 'keycode'
 os = require 'component-os'
 
+isMozilla = window.navigator.userAgent.slice(0, 3) is 'Moz'
+
 rec = no
 pfx =
   ctrl  : no
@@ -50,7 +52,11 @@ keydown = (e) ->
   e.preventDefault()
   e.stopPropagation()
 
-  key = keycode e.which or e.keyCode
+  code = e.which or e.keyCode
+  if code is 224 and isMozilla then code = 91
+  key = keycode code
+
+  return unless key
 
   if key of pfx
   then pfx[meta] = yes for meta of pfx when key is meta
